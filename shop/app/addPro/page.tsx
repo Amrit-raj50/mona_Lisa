@@ -2,6 +2,9 @@
 
 import { useState } from 'react';
 import Navbar from '../components/Navbar';
+// import Navbar from '../components/Navbar';
+import Header from '../components/Header';
+import { usePathname } from 'next/navigation';
 export default function Pro() {
     const [nameInp, setNameInp] = useState("");
     const [priceInp, setPriceInp] = useState("");
@@ -38,6 +41,7 @@ export default function Pro() {
     }
 
     // fetchApi();
+    const url = usePathname();
 
     // },[]);
 
@@ -54,6 +58,7 @@ export default function Pro() {
     return (
         <>
             <Navbar />
+            <Header url={url}/>
             <div
                 style={{
                     display: "flex",
